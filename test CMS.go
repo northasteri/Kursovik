@@ -38,7 +38,7 @@ func (cms *Sketch) HashIndex(s string, seed uint64) int {
 }
 
 func (cms *Sketch) Add(s string, count int) {
-	fmt.Printf("Добавляем элемент '%s', count=%d\n", s, count)
+	fmt.Printf("Добавляем элемент '%s'", s)
 	for i := 0; i < cms.depth; i++ {
 		idx := cms.HashIndex(s, cms.hashes[i])
 		cms.table[i][idx] += count
@@ -73,7 +73,7 @@ func main() {
 
 		seen[key]++
 		cms.Add(key, 1)
-		fmt.Printf("Текущее наивное значение: %d\n", seen[key])
+
 	}
 
 	fmt.Println("\nПроверка частот ")
