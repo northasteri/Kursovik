@@ -42,7 +42,7 @@ func (cms *Sketch) Add(s string, count int) {
 	for i := 0; i < cms.depth; i++ {
 		idx := cms.HashIndex(s, cms.hashes[i])
 		cms.table[i][idx] += count
-		fmt.Printf("  Хэш %d -> индекс %d, новое значение %d\n", i+1, idx, cms.table[i][idx])
+		fmt.Printf(" \n Хэш %d -> индекс %d, новое значение %d\n", i+1, idx, cms.table[i][idx])
 	}
 }
 
